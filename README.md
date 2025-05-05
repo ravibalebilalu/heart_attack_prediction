@@ -5,6 +5,7 @@ This app predicts possible heart attack risk by analyzing  health data.
 ## ⚠️ Disclaimer : 
 ### This app is created for educational purpose. Use of this app is at your own risk.  The author is not responsible for any consequences resulting from its use.
 ##  📊 Data for Prediction
+
 ### - **age** :  patient's age
 ### - **gender** : Gender, 0 for female ,1 for male
 ### - **heart_rate** : number of heartbeats per minute
