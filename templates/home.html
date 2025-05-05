@@ -9,9 +9,90 @@
             background-color: black;
             color: white;
         }
+        form{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        button{
+            padding: 5px 10px;
+            background-color: rgba(255, 255, 255, 0.598);
+            color: rgb(10, 31, 107);
+            border-radius: 20px;
+            font-size: 30px;
+            outline: none;
+            margin: 5px;
+             
+            
+        }
+        label{
+            color: rgba(7, 240, 7, 0.542);
+            font-size: 25px;
+            border: 5px solid rgb(43, 46, 43);
+        }
+        .positive{
+            color: red;
+        }
+        .negative{
+            color:green;
+        }
+        .result{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 50px;
+
+        }
     </style>
 </head>
 <body >
-    <h1>SHREEKRISHNA</h1>
+    
+
+<form action="{{ 'predict'}}" method="post">
+
+
+  
+
+    <label for="age">Age</label>
+    <input type="text" name="age" id="age"  required="required">
+
+    <label for="gender">Gender</label>
+    <input type="text" name="gender" id="gender" required="required">
+
+    <label for="heart_rate">Heart Rate</label>
+    <input type="text" name="heart_rate" id="heart_rate" required="required">
+
+    <label for="systolic_blood_pressure">Systolic Blood Pressure</label>
+    <input type="text" name="systolic_blood_pressure" id="systolic_blood_pressure" required="required">
+
+    <label for="diastolic_blood_pressure">Diastolic Blood Pressure</label>
+    <input type="text" name="diastolic_blood_pressure" id="diastolic_blood_pressure" required="required">
+
+    <label for="blood_sugar">Blood Sugar</label>
+    <input type="text" name="blood_sugar" id="blood_sugar" required="required">
+
+    <label for="ck-mb">Ck Mb</label>
+    <input type="text" name="ck-mb" id="ck-mb" required="required">
+
+    <label for="troponin"> Troponin</label>
+    <input type="text" name="troponin" id="troponin" required="required">
+   
+<button type="submit">Predict</button>
+</form>
+
+      
+         
+         <div class="result">
+            {% if result == "POSITIVE" %}
+            <p class="positive">{{result}}</p>
+
+            {% else %}
+            
+            <p class="negative">{{result}}</p>
+            {% endif %}
+          </div>
+         
 </body>
 </html>

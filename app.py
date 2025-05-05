@@ -19,7 +19,8 @@ def predict():
     data =  [float(x) for x in request.form.values()]
     new_data = scaler.transform(np.array(data).reshape(1,-1))
     pred = model.predict(new_data)
-    return render_template("home.html",result = pred[0])
+    pred = "POSITIVE" if pred[0] == 1 else "NEGATIVE"
+    return render_template("home.html",result = pred)
 
 
 if __name__ == "__main__":
